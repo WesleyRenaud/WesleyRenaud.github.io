@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Work Term Report</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <hr>
+  <div id="title-container">
+    <h1 id="title">Armour Technology Solutions - Work Term Report (S24)</h1>
+    <p id="subtitle">Wesley Renaud&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wrenaud@uoguelph.ca</p>
+  </div>
+  <hr>
+
+  <div class="btn-group wrap-buttons">
+    <a href="introduction.html" class="btn btn-primary">Introduction</a>
+    <a href="about_the_employer.html" class="btn btn-primary">About the Employer</a>
+    <a href="learning_goals.html" class="btn btn-primary">Learning Goals</a>
+    <a href="acheiving_my_goals.html" class="btn btn-primary">Acheiving My Goals</a>
+    <a href="job_description.html" class="btn btn-primary">Job Description</a>
+    <a href="proposal_manager.html" class="btn btn-primary">Proposal Manager</a>
+    <a href="email_automation.html" class="btn btn-primary">Email Automation</a>
+    <a href="drive_distance_tool.html" class="btn btn-primary">Drive Distance Tool</a>
+    <a href="job_skills.html" class="btn btn-primary">Job Skills</a>
+    <a href="conclusion.html" class="btn btn-primary">Conclusion</a>
+  </div>
+
+  <div id="body-container">
+    <div id="rectangle left" class="rectangle"></div>
+    <div id="content-container">
+        <p>
+          One of the larger projects which I worked on is a proposal-making app for the company, 
+          EnviroTech. The company distributes furniture to offices and as part of their services they 
+          create mock floor plans for their customers to view and give feedback on. The issue is that 
+          these floorplans take a lot of time to develop for the designers; if the process could be 
+          automated in a way such that the designer only has to select the pieces of furniture to 
+          include in the program, and the program does the rest, a lot of time would be saved. 
+          <br><br>
+          The program that I worked on resembles something like PowerPoint and works by having the user 
+          select the pages that they want to add to the proposal. The user can select from a series of 
+          stock pages that are reused across proposals and contain information about the company, or 
+          create their own “product” pages which allow the user to pick products from the database to 
+          add to the floor plan/proposal. 
+          <br><br>
+
+          <div class="image-pair-container">
+            <div class="image-pair-container-left-image">
+              <img class="img-responsive" img src="images/Proposal_Manager_First_Page_View.png" alt="Proposal Manager First Page">
+              <h6 class="caption">
+                The first screen you see when you start the program.
+              </h6>
+            </div>
+            <div class="image-pair-container-right-image">
+              <img class="img-responsive" img src="images/Proposal_Manager_Other_Pages_View.png" alt="Proposal Manager Other Pages">
+              <h6 class="caption">
+                What you see after clicking "Other Pages", the screen to add the stock/reusable images.
+              </h6>
+            </div>
+          </div>
+          <br>
+          <div class="image-pair-container">
+            <div class="image-pair-container-left-image">
+              <img class="img-responsive" img src="images/Proposal_Manager_Product_Pages_View.png" alt="Proposal Manager Product Pages">
+              <h6 class="caption">
+                What you see after clicking "Product Pages", the screen where you can pick templates to select products for.
+              </h6>
+            </div>
+            <div class="image-pair-container-right-image">
+              <img class="img-responsive" img src="images/Proposal_Manager_Products_Template_View.png" alt="Proposal Manager Products Template">
+              <h6 class="caption">
+                What you see after clicking on one of the templates, the screen where you pick the products.
+              </h6>
+            </div>
+          </div>
+          <br><br>
+
+          At the end, all of the pages which the user has added are compiled and downloaded into a pdf 
+          document. The project was made using Visual Studio and C#, HTML, CSS, and JavaScript, AJAX,
+          and a pdf-generating tool, jsPDF. The program started off by making a static HTML page for
+          when the program is opened. Then JavaScript code was added to the buttons to change the look
+          of the page appropriately. The last touches were getting the data for the products, having 
+          the images added properly, and implementing the functionality for generating the pdf.
+          <br><br>
+
+          This specific project was the one where I was given the most flexibility in both how it looked,
+          and how it worked. I was given the task of creating a program that made making a proposal easy
+          using the EnviroTech products data. I had to design the program bottom-up and create all of the
+          pages from scratch. Creating the program taught me a lot about moving through all of the stages
+          of software development on an accelerated timeline. I had to use my own judgement and experience
+          to decide how I would make the program intuitive and easy to learn. It was a unique experience
+          in the context of my term and I would like to take another crack at making a project in this 
+          way.
+        </p>
+    </div>
+    <div id="rectangle right" class="rectangle"></div>
+  </div>
+  <hr>
+</body>
+</html>

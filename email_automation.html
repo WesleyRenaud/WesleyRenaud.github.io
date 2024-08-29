@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Work Term Report</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <hr>
+  <div id="title-container">
+    <h1 id="title">Armour Technology Solutions - Work Term Report (S24)</h1>
+    <p id="subtitle">Wesley Renaud&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wrenaud@uoguelph.ca</p>
+  </div>
+  <hr>
+
+  <div class="btn-group wrap-buttons">
+    <a href="introduction.html" class="btn btn-primary">Introduction</a>
+    <a href="about_the_employer.html" class="btn btn-primary">About the Employer</a>
+    <a href="learning_goals.html" class="btn btn-primary">Learning Goals</a>
+    <a href="acheiving_my_goals.html" class="btn btn-primary">Acheiving My Goals</a>
+    <a href="job_description.html" class="btn btn-primary">Job Description</a>
+    <a href="proposal_manager.html" class="btn btn-primary">Proposal Manager</a>
+    <a href="email_automation.html" class="btn btn-primary">Email Automation</a>
+    <a href="drive_distance_tool.html" class="btn btn-primary">Drive Distance Tool</a>
+    <a href="job_skills.html" class="btn btn-primary">Job Skills</a>
+    <a href="conclusion.html" class="btn btn-primary">Conclusion</a>
+  </div>
+
+  <div id="body-container">
+    <div id="rectangle left" class="rectangle"></div>
+    <div id="content-container">
+      Another project that I worked on for the company, EnviroTech, had me develop a program used to 
+      iterate over the inbox folders of several email accounts, and sort all of the emails in them. The 
+      program’s goal is to sort out (move to another folder) all of the emails which describe a bounce, 
+      a block, or are some automatic response, be it that the recipient is out of office, no longer with 
+      the company, etc. 
+      <br><br>
+
+      <div class="text-image-container" class="text-left-image-right-container">
+        <div class="text-container-left">
+          This program was created for someone who runs email campaigns for EnviroTech. When she runs one 
+          of these campaigns she sends many thousands of emails, and thus receives many responses, a large
+          proportion of which are automated and do not need to be read individually. When sorting through 
+          her emails, she wants to find any potential leads as easily as possible. For any automated 
+          messages which are not leads but are still important, like those from people being asked to be 
+          removed from the campaign list, she'd like these to be handled automatically.
+          <br><br>
+          This program moves all of these emails to an appropriate and marks down each of the mail 
+          addresses which were found to have errors (the email was bounced/blocked) or any email address 
+          which has been requested to be removed from the campaign list, in the EnviroTech database with 
+          a merge code that describes the condition with the email address. All of the changes in a 
+          given run of the program are summarized in a log file. 
+        </div>
+
+        <div class="image-container-vertical-image">
+          <img class="img-responsive" img src="images/Email_Automation_Folders_View.png" alt="Email Automation Folders">
+          <h6 class="caption">
+            The folders I set up to move the emails into.
+          </h6>
+        </div>
+      </div>     
+      <br><br>
+
+      <div class="text-image-container" class="text-right-image-left-container">
+        <div class="image-container">
+          <img class="img-responsive" img src="images/Email_Automation_Log_File_View.png" alt="Email Automation Log File">
+          <h6 class="caption">
+            Part of one of the log files generated from running the program.
+          </h6>
+        </div>
+        
+        <div class="text-container-right">
+          The program was written in C# and uses the Microsoft.Graph API to access the emails. The two 
+          main challenges with this project were to get the program properly iterating over the emails 
+          and moving the emails into the new folders, and creating an algorithm to sort the emails based 
+          on their contents. I used a key phrase system to sort the emails where each email is sorted 
+          by checking whether the contents of the email (the subject and body) have a key phrase which 
+          belongs to a certain type of email. For example, the program may check if a specific email is 
+          a “no longer with” type of email by checking if it has the phrase “is no longer a member of”. 
+          There were hundreds of flags used in total, and extensive testing was used to make sure that 
+          that the algorithm was near perfect, both in terms of not missing any emails, but also not 
+          flagging any emails that it shouldn’t have.
+        </div>
+      </div>
+      <br><br>
+
+      Creating this program taught me a lot about designing and testing algorithms in a setting like this.
+      While creating my algorithm I had to spend a lot of time analyzing the contents of the emails and
+      coming up with the flags. The challenge was finding flags that were not too specific to where all of
+      the emails could be picked up fairly easily, without too many flags, but also not too broad so that
+      no emails were picked up that shouldn't have been. Retrospectively I can think of more effective
+      ways which I could have found flags, and tested and refined the list. Coming back to this project
+      regularly taught me better and better ways to design algorithms like this, and also taught me to be 
+      attentive to detail.
+      <br><br>
+    </div>
+    <div id="rectangle right" class="rectangle"></div>
+  </div>
+  <hr>
+</body>
+</html>

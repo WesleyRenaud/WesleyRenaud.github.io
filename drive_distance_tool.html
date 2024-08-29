@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Work Term Report</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <hr>
+  <div id="title-container">
+    <h1 id="title">Armour Technology Solutions - Work Term Report (S24)</h1>
+    <p id="subtitle">Wesley Renaud&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wrenaud@uoguelph.ca</p>
+  </div>
+  <hr>
+
+  <div class="btn-group wrap-buttons">
+    <a href="introduction.html" class="btn btn-primary">Introduction</a>
+    <a href="about_the_employer.html" class="btn btn-primary">About the Employer</a>
+    <a href="learning_goals.html" class="btn btn-primary">Learning Goals</a>
+    <a href="acheiving_my_goals.html" class="btn btn-primary">Acheiving My Goals</a>
+    <a href="job_description.html" class="btn btn-primary">Job Description</a>
+    <a href="proposal_manager.html" class="btn btn-primary">Proposal Manager</a>
+    <a href="email_automation.html" class="btn btn-primary">Email Automation</a>
+    <a href="drive_distance_tool.html" class="btn btn-primary">Drive Distance Tool</a>
+    <a href="job_skills.html" class="btn btn-primary">Job Skills</a>
+    <a href="conclusion.html" class="btn btn-primary">Conclusion</a>
+  </div>
+
+  <div id="body-container">
+    <div id="rectangle left" class="rectangle"></div>
+    <div id="content-container">
+      Roma Fuels and Brown's Fuel are two fuel distributing companies, who deliver fuel directly to their
+      customers' front doors. They wanted a project which would create an easier way to add new customers 
+      to their existing delivery routes. 
+      <br><br> 
+
+      <div class="text-image-container" class="text-left-image-right-container">
+        <div class="text-container-left">
+          I was tasked with creating a program which would allow the user to enter the address for a 
+          customer which they want to add to an existing route, and then returns a list of the ‘n’ 
+          closest customers (where ‘n’ is an integer also supplied by the user) which are displayed on 
+          both a map and a grid in order of driving distance to the new address. There also exist 
+          additional filters to pick only customers from one of the companies, only the customers that 
+          are delivered to in the morning (AM) or evening (PM), or only the customers that are delivered 
+          to during certain days of the week. These filters would prove useful in a situation where, 
+          for example, the new customer can only be delivered to on weekday mornings.
+        </div>
+
+        <div class="image-container">
+          <img class="img-responsive" img src="images/Drive_Distance_Tool_Map_View.png" alt="Drive Distance Tool Map">
+          <h6 class="caption">
+            The screen you see when you click "Map View", used to enter the new customer.
+          </h6>
+        </div>
+      </div>     
+      <br><br>
+
+      <div class="text-image-container" class="text-right-image-left-container">
+        <div class="image-container">
+          <img class="img-responsive" img src="images/Drive_Distance_Tool_Map_View_After_Search.png" alt="Drive Distance Tool Map After Search">
+          <h6 class="caption">
+            The map view screen after pressing "Go", and the closest customers have been retrieved.
+          </h6>
+          <br>
+
+          <img class="img-responsive" img src="images/Drive_Distance_Tool_Grid_View.png" alt="Drive Distance Tool Grid">
+          <h6 class="caption">
+            What you see when you click "Grid View", and you have already searched for a new customer.
+          </h6>
+        </div>
+        
+        <div class="text-container-right">
+          The program uses a service, Azure Maps, to display the map and render the markers representing 
+          the customers’ addresses. The existing addresses are represented by blue markers, while the new, 
+          'target' address is represented by a red marker. 
+          <br><br><br><br><br><br><br><br><br>
+          The program uses Kendo for the grid which has built-in features such as sorting by one of the 
+          columns, filtering by some string or word, paging the results, grouping by a field, etc. 
+          <br><br>
+        </div>
+      </div>
+      <br><br>
+
+      The biggest challenges of this project had to do with getting all of the customer data that I needed 
+      efficiently. For a while I had the program re-pull the customer data each time the user searched, 
+      and that worked at first but eventually I had to perform different requests to get different data. 
+      <br><br>
+      I worked a lot with getting the data: reducing the number of calls, only taking the data I needed, 
+      finding more efficient calls with more information, etc., and in the end I had to separate the 
+      functionality of getting the data, from the functionality of searching for the nearest customers.
+      Working on this program taught me a lot about how to effectively use web service calls to retrieve
+      important data for a program. I learned about the power of these tools, but also the downside with
+      how costly these calls can be.
+      <br><br><br>
+    </div>
+    <div id="rectangle right" class="rectangle"></div>
+  </div>
+  <hr>
+</body>
+</html>

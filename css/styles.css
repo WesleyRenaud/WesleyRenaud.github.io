@@ -1,0 +1,106 @@
+html {
+    overflow-y: scroll;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+}
+
+#title-container {
+    background-color: #FAFAFA;
+    display: flex;
+    flex-direction: column;
+}
+
+#title {
+    padding-left: 25px;
+    padding-top: 20px;
+    text-decoration: underline;
+    color: #8B0000;
+}
+
+#subtitle {
+    padding-left: 25px;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+.btn {
+    min-height: 60px;
+}
+
+.wrap-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    background-color: #004080;
+}
+
+.wrap-buttons .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+    background-color: #004080;
+    border-color: black;
+}
+
+#body-container {
+    display: flex;
+    min-height: 71vh;
+}
+
+.rectangle {
+    width: 5%;
+    background-color: lightblue;
+}
+
+#content-container {
+    flex: 1;
+    padding: 40px;
+}
+
+hr {
+    padding: 0;
+    margin: 0;
+    border-width: 4px;
+}
+
+.text-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text-container-left, .text-container-right {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.text-container-right {
+    padding-left: 20px;
+}
+
+.image-container {
+    width: 50%;
+}
+
+.image-pair-container {
+    display: flex;
+}
+
+.image-pair-container-left-image {
+    padding-right: 20px;
+}
+
+.image-pair-container-right-image {
+    padding-left: 20px;
+}
+
+.image-container-vertical-image, .armour-logo-image-container {
+    width: 30%;
+}
+
+.caption {
+    text-align: center;
+}
