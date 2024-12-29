@@ -42,30 +42,39 @@
   <div id="body-container">
     <div id="rectangle left" class="rectangle"></div>
     <div id="content-container">
+      <div class="text-image-container" class="text-left-image-right-container">
+        <div class="text-container-left">
+          <p>
+            DTN BOL is one of the main projects I worked on during this work term. The project was designed 
+            for a fuel company, Roma Fuels. The goal of this project is to access a file, daily, located 
+            remotely, which consists of information about a number of bills of lading. Once the file is 
+            located, it is downloaded locally and line-by-line, info for each of the BOLs is read. This 
+            information is read and entered into a SQL database. This program is run automatically once a 
+            day, and starts by clearing out all of the previous BOL records. 
+          </p>
+        </div>
+
+        <div class="image-container">
+          <img class="img-responsive" img src="images/DTNBOL_File.png" alt="DTNBOL File">
+          <h6 class="caption">
+            An example of one of the files with the BOL information.
+          </h6>
+        </div>
+      </div>
+
+      <br><br>
       <p>
-        The hard skills I used during this work term include programming in C#, JS, HTML, and CSS, 
-        knowledge of Outlook and inbox rules, knowledge of Azure and Microsoft development tools and 
-        environments, knowledge of Visual Studio, and knowledge of Microsoft NAV and SQL databases. 
-        The knowledge and skills that I required for this term most frequently came from my first work 
-        term at Armour and my schooling. In my first work term I had my first experiences with Visual 
-        Studio, C#, and due to that basic knowledge I was able to comfortably expand upon those skills, 
-        particularly with Visual Studio and all of its built-in tools for development and debugging, as 
-        reflected in my learning goals for this term. For many of the technical skills that I needed for 
-        this term and the projects I worked on within it, I developed them as they came up. During my 
-        first work I spent a lot of time using AI and documentation to improve my understanding of the 
-        tools I was working with, and I continued that in this work term to learn more about NAV, the 
-        Azure Document Intelligence Studio, and web services.
-        <br><br>
-        Some of the soft skills that I needed the most for this work term include organization and 
-        balancing of the tasks I am working on, and time management and setting and meeting deadlines. 
-        These skills are similar to the ones I needed and focused on during my first work term, and 
-        the techniques I used to improve them largely come from there as well. During my first work 
-        term I found myself often working harder than I should have needed to to get a project done by 
-        the deadline I set for myself. I also found myself struggling with the limited time I had in a 
-        day to get work done, and encountering many errors in my programs that would take me a very 
-        long time to fix. I learned the soft skills that helped me the most during this work term from 
-        the experiences that I found most difficult about my first work term.
+        Some of the biggest challenges of this project were reading the BOL data from the file and automating 
+        the running of the program. Reading the data was difficult because the file is a simple CSV file in 
+        which each line has data for a different document, and each value in a row is for a different field in 
+        the document. It was crucial that I was populating the values for the documents correctly so that the 
+        SQL table would be populated correctly. Automating the task was particularly challenging because of 
+        the VPN which I needed to have turned on to access the SQL database. I had to learn how to coincide 
+        the activating of the VPN with the running of the program. This was my first time using Windows Task 
+        Scheduler for something like this, but the experience is one that will come in handy all of the times 
+        in the future when I have to schedule some program to run automatically.
       </p>
+      <br><br>
     </div>
     <div id="rectangle right" class="rectangle"></div>
   </div>
