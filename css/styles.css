@@ -52,6 +52,11 @@ body {
     font-size: 18px;
 }
 
+.work-term-report-button.is-active {
+    background-color: #8B0000;
+    border-color: #600000;
+}
+
 .work-term-report-page-button {
     background-color: #004080;
     border-color: black;
@@ -115,4 +120,155 @@ hr {
 
 .caption {
     text-align: center;
+}
+
+.reports-home {
+    background: linear-gradient(180deg, #eef5fb 0%, #f9fbfd 100%);
+    color: #10263d;
+}
+
+.home-shell {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 24px 64px;
+}
+
+.home-hero {
+    margin-bottom: 36px;
+}
+
+.home-eyebrow {
+    color: #8B0000;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.home-hero h1 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: #0d2d4d;
+    font-size: 48px;
+}
+
+.home-summary {
+    max-width: 640px;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.report-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.report-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 280px;
+    padding: 28px;
+    border: 2px solid #b6cadb;
+    background: #ffffff;
+    color: inherit;
+    text-decoration: none;
+    box-shadow: 0 16px 32px rgba(14, 39, 67, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.report-card:hover,
+.report-card:focus {
+    transform: translateY(-4px);
+    border-color: #004080;
+    box-shadow: 0 20px 40px rgba(14, 39, 67, 0.14);
+    text-decoration: none;
+    color: inherit;
+}
+
+.report-card--draft {
+    border-color: #8B0000;
+}
+
+.report-card__term {
+    color: #8B0000;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.report-card h2 {
+    margin: 0;
+    color: #0d2d4d;
+    font-size: 28px;
+}
+
+.report-card p {
+    margin: 0;
+    flex: 1;
+    line-height: 1.6;
+}
+
+.report-card__cta {
+    font-weight: bold;
+    color: #004080;
+}
+
+.placeholder-panel {
+    max-width: 760px;
+    padding: 32px;
+    border-left: 6px solid #8B0000;
+    background: #f4f8fc;
+    box-shadow: 0 10px 24px rgba(14, 39, 67, 0.08);
+}
+
+.placeholder-panel h2 {
+    margin-top: 0;
+    color: #0d2d4d;
+}
+
+.placeholder-panel p {
+    line-height: 1.6;
+}
+
+.placeholder-note {
+    font-size: 16px;
+    color: #455a70;
+}
+
+@media (max-width: 768px) {
+    #body-container,
+    .text-image-container,
+    .image-pair-container {
+        flex-direction: column;
+    }
+
+    .rectangle {
+        width: 100%;
+        min-height: 20px;
+    }
+
+    .image-container,
+    .image-container-vertical-image,
+    .armour-logo-image-container {
+        width: 100%;
+    }
+
+    #content-container {
+        padding: 24px;
+    }
+
+    .home-shell {
+        padding: 32px 18px 48px;
+    }
+
+    .home-hero h1 {
+        font-size: 36px;
+    }
+
+    .home-summary {
+        font-size: 18px;
+    }
 }
