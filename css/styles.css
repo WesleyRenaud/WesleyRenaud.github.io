@@ -114,7 +114,7 @@ hr {
     padding-left: 20px;
 }
 
-.image-container-vertical-image, .armour-logo-image-container {
+.image-container-vertical-image, .armour-logo-image-container, .logo-image-container {
     width: 30%;
 }
 
@@ -280,7 +280,8 @@ hr {
 
     .image-container,
     .image-container-vertical-image,
-    .armour-logo-image-container {
+    .armour-logo-image-container,
+    .logo-image-container {
         width: 100%;
     }
 
