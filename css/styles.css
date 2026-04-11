@@ -267,6 +267,99 @@ hr {
     color: #0d2d4d;
 }
 
+.w26-page-shell {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.w26-content-card {
+    padding: 32px;
+    background: #f7fafc;
+    border-left: 6px solid #8B0000;
+    box-shadow: 0 10px 24px rgba(14, 39, 67, 0.08);
+}
+
+.w26-content-card > :first-child,
+.w26-mini-card > :first-child {
+    margin-top: 0;
+}
+
+.w26-content-card > :last-child,
+.w26-mini-card > :last-child,
+.w26-image-panel > :last-child {
+    margin-bottom: 0;
+}
+
+.w26-content-card h2,
+.w26-content-card h3,
+.w26-mini-card h3 {
+    color: #0d2d4d;
+}
+
+.w26-content-card p,
+.w26-mini-card p {
+    line-height: 1.7;
+}
+
+.w26-kicker {
+    margin-bottom: 10px;
+    color: #8B0000;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.w26-list {
+    margin: 16px 0 0;
+    padding-left: 22px;
+}
+
+.w26-list li {
+    margin-bottom: 14px;
+    line-height: 1.7;
+}
+
+.w26-split {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(240px, 340px);
+    gap: 24px;
+    align-items: start;
+}
+
+.w26-image-panel {
+    padding: 24px;
+    background: #ffffff;
+    border: 1px solid #dbe3ea;
+    box-shadow: 0 10px 24px rgba(14, 39, 67, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.w26-image-panel img {
+    width: 100%;
+    display: block;
+}
+
+.w26-card-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.w26-mini-card {
+    padding: 24px;
+    background: #ffffff;
+    border-top: 4px solid #004080;
+    box-shadow: 0 10px 24px rgba(14, 39, 67, 0.08);
+}
+
+.w26-content-card .text-image-container {
+    align-items: flex-start;
+}
+
 .placeholder-panel {
     max-width: 760px;
     padding: 32px;
@@ -294,6 +387,11 @@ hr {
     .text-image-container,
     .image-pair-container {
         flex-direction: column;
+    }
+
+    .w26-split,
+    .w26-card-grid {
+        grid-template-columns: 1fr;
     }
 
     .rectangle {
