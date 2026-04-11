@@ -118,8 +118,31 @@ hr {
     width: 30%;
 }
 
+.image-container,
+.image-container-vertical-image,
+.armour-logo-image-container,
+.logo-image-container,
+.image-pair-container-left-image,
+.image-pair-container-right-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-container img,
+.image-container-vertical-image img,
+.armour-logo-image-container img,
+.logo-image-container img,
+.image-pair-container-left-image img,
+.image-pair-container-right-image img {
+    display: block;
+    margin: 0 auto;
+}
+
 .caption {
     text-align: center;
+    margin-top: 8px;
+    margin-bottom: 0;
 }
 
 .reports-home {
