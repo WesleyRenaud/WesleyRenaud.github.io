@@ -15,7 +15,7 @@
   <a href="winter26-introduction.html" class="btn btn-primary work-term-report-button is-active">W26 - Brock</a>
 </div>
 
-  <title>Work Term Report</title>
+  <title>JetBlue Load Plan With Cargo | Work Term Report</title>
 </head>
 <body>
   <hr>
@@ -32,7 +32,7 @@
   <a href="winter26-achieving-my-goals.html" class="btn btn-primary work-term-report-page-button">Achieving My Goals</a>
   <a href="winter26-job-description.html" class="btn btn-primary work-term-report-page-button">Job Description</a>
   <a href="winter26-final-destination-rule.html" class="btn btn-primary work-term-report-page-button">Final Destination Rule</a>
-  <a href="winter26-work-sample-2.html" class="btn btn-primary work-term-report-page-button">Work Sample 2</a>
+  <a href="winter26-jetblue-load-plan-with-cargo.html" class="btn btn-primary work-term-report-page-button">JetBlue Load Plan With Cargo</a>
   <a href="winter26-work-sample-3.html" class="btn btn-primary work-term-report-page-button">Work Sample 3</a>
   <a href="winter26-job-skills.html" class="btn btn-primary work-term-report-page-button">Job Skills</a>
   <a href="winter26-conclusion.html" class="btn btn-primary work-term-report-page-button">Conclusion</a>
@@ -41,13 +41,44 @@
   <div id="body-container">
     <div id="rectangle left" class="rectangle"></div>
     <div id="content-container">
-      <div class="placeholder-panel">
-        <h2>Work Sample 2</h2>
-        <p>This placeholder is reserved for your second major Winter 2026 work sample.</p>
-        <br>
-        <p>Use it for another project, deliverable, or recurring responsibility that deserves its own write-up.</p>
+      <div class="w26-page-shell">
+        <section class="w26-content-card">
+          <p class="w26-kicker">Work Sample</p>
+          <h2>JetBlue ADLFD Load Plan Message With Cargo</h2>
+          <p>
+            JetBlue uses ADLFD (Aero Data Load Flight Data) messages to define load plans for its
+            flights. A load plan describes the expected weights, counts, volumes, and other values for
+            the containers associated with a flight. As bags and cargo are loaded, the properties of
+            those pieces must be compared against the load plan to make sure they do not exceed the
+            expected limits. If loading a piece would exceed one of those values, the system generates
+            an exception.
+          </p>
+          <p>
+            My task was to take the load plan message that Brock Solutions sends to JetBlue and modify
+            it so that it also included cargo loaded onto the flight. Bags and cargo are stored
+            differently in the system, and the existing load plan message only included baggage.
+          </p>
+        </section>
 
-        <p class="placeholder-note">This page uses a generic work-sample filename for now. Rename it later if you want the URL to match a final project title.</p>
+        <section class="w26-content-card">
+          <h3>Implementation Process</h3>
+          <p>
+            Updating the existing load plan message involved several steps:
+          </p>
+          <ul class="w26-list">
+            <li>Fetch the cargo records from the database using the flight ID.</li>
+            <li>Extract the values needed for each cargo piece, such as weight, volume, and type.</li>
+            <li>Integrate the cargo pieces into the existing message structure alongside baggage.</li>
+            <li>Sort the bags and cargo by type and by the container they were loaded into.</li>
+            <li>Add a way to distinguish between baggage and cargo within the message.</li>
+            <li>Create a setting and factory-based switch so the system could use either the legacy generator or the new cargo-enabled generator.</li>
+          </ul>
+          <p>
+            That final rollout step was important because it allowed the new message to be tested more
+            safely in the production environment while still giving the team the option to fall back to
+            the legacy generator if any issues were found.
+          </p>
+        </section>
       </div>
     </div>
     <div id="rectangle right" class="rectangle"></div>
