@@ -15,7 +15,7 @@
   <a href="winter26-introduction.html" class="btn btn-primary work-term-report-button is-active">W26 - Brock</a>
 </div>
 
-  <title>JetBlue Load Plan With Cargo | Work Term Report</title>
+  <title>Bug Fixes | Work Term Report</title>
 </head>
 <body>
   <hr>
@@ -44,40 +44,49 @@
       <div class="w26-page-shell">
         <section class="w26-content-card">
           <p class="w26-kicker">Work Sample</p>
-          <h2>JetBlue ADLFD Load Plan Message With Cargo</h2>
+          <h2>Bug Fixes</h2>
           <p>
-            JetBlue uses ADLFD (Aero Data Load Flight Data) messages to define load plans for its
-            flights. A load plan describes the expected weights, counts, volumes, and other values for
-            the containers associated with a flight. As bags and cargo are loaded, the properties of
-            those pieces must be compared against the load plan to make sure they do not exceed the
-            expected limits. If loading a piece would exceed one of those values, the system generates
-            an exception.
-          </p>
-          <p>
-            My task was to take the load plan message that Brock Solutions sends to JetBlue and modify
-            it so that it also included cargo loaded onto the flight. Bags and cargo are stored
-            differently in the system, and the existing load plan message only included baggage.
+            I worked on a number of bug fixes during my first work term at Brock. Those bugs exposed me
+            to different features and systems within both the mobile and web applications, and they gave
+            me experience investigating issues that ranged from business logic problems to user interface
+            defects.
           </p>
         </section>
 
-        <section class="w26-content-card">
-          <h3>Implementation Process</h3>
-          <p>
-            Updating the existing load plan message involved several steps:
-          </p>
-          <ul class="w26-list">
-            <li>Fetch the cargo records from the database using the flight ID.</li>
-            <li>Extract the values needed for each cargo piece, such as weight, volume, and type.</li>
-            <li>Integrate the cargo pieces into the existing message structure alongside baggage.</li>
-            <li>Sort the bags and cargo by type and by the container they were loaded into.</li>
-            <li>Add a way to distinguish between baggage and cargo within the message.</li>
-            <li>Create a setting and factory-based switch so the system could use either the legacy generator or the new cargo-enabled generator.</li>
-          </ul>
-          <p>
-            That final rollout step was important because it allowed the new message to be tested more
-            safely in the production environment while still giving the team the option to fall back to
-            the legacy generator if any issues were found.
-          </p>
+        <section class="w26-card-grid">
+          <article class="w26-mini-card">
+            <h3>Container Auto-Creation Duplication Check</h3>
+            <p>
+              One of the more involved bugs I worked on was a duplication check for the web client
+              container auto-creation configuration page. The web client allows users to automatically
+              create certain ULD, cart, or bulk-hold containers when a flight with a specific airline
+              and aircraft is created. This is useful when those flights regularly require the same
+              container setup.
+            </p>
+            <p>
+              The bug was that the system did not prevent users from creating containers with the same
+              name, or from assigning multiple containers to the same aircraft position for the same
+              airline and aircraft combination. I implemented checks against the existing configured
+              containers to prevent those conflicts. The more difficult part was handling cases where the
+              user made multiple pending edits across different containers at the same time. To solve
+              that, I created a virtual version of the container list that included all pending changes
+              and ran the duplication checks against that state.
+            </p>
+          </article>
+
+          <article class="w26-mini-card">
+            <h3>French Mobile Formatting Fixes</h3>
+            <p>
+              Another bug I fixed involved formatting issues in several parts of the mobile application
+              caused by certain French translations. Brock develops the application in English, but the
+              product also supports French, Portuguese, and Spanish.
+            </p>
+            <p>
+              To fix the issue, I updated the AXML layout code and some of the frontend C# code so the
+              screens could better accommodate longer French strings. Those changes had to be made
+              carefully to preserve the working layouts for the other supported languages.
+            </p>
+          </article>
         </section>
       </div>
     </div>
