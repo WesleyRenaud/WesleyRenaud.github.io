@@ -15,7 +15,7 @@
   <a href="winter26-introduction.html" class="btn btn-primary work-term-report-button is-active">W26 - Brock</a>
 </div>
 
-  <title>Work Term Report</title>
+  <title>Final Destination Rule | Work Term Report</title>
 </head>
 <body>
   <hr>
@@ -31,7 +31,7 @@
   <a href="winter26-learning-goals.html" class="btn btn-primary work-term-report-page-button">Learning Goals</a>
   <a href="winter26-achieving-my-goals.html" class="btn btn-primary work-term-report-page-button">Achieving My Goals</a>
   <a href="winter26-job-description.html" class="btn btn-primary work-term-report-page-button">Job Description</a>
-  <a href="winter26-work-sample-1.html" class="btn btn-primary work-term-report-page-button">Work Sample 1</a>
+  <a href="winter26-final-destination-rule.html" class="btn btn-primary work-term-report-page-button">Final Destination Rule</a>
   <a href="winter26-work-sample-2.html" class="btn btn-primary work-term-report-page-button">Work Sample 2</a>
   <a href="winter26-work-sample-3.html" class="btn btn-primary work-term-report-page-button">Work Sample 3</a>
   <a href="winter26-job-skills.html" class="btn btn-primary work-term-report-page-button">Job Skills</a>
@@ -41,13 +41,41 @@
   <div id="body-container">
     <div id="rectangle left" class="rectangle"></div>
     <div id="content-container">
-      <div class="placeholder-panel">
-        <h2>Work Sample 1</h2>
-        <p>This placeholder is reserved for your first major Winter 2026 work sample, project, or responsibility.</p>
-        <br>
-        <p>Replace the page title, navigation label, and body content once you know what the final section should be called.</p>
+      <div class="w26-page-shell">
+        <section class="w26-content-card">
+          <p class="w26-kicker">Work Sample</p>
+          <h2>Grouping - Final Destination Rule</h2>
+          <p>
+            A fundamental component of SmartBag's reconciliation system is the concept of grouping. The
+            goal is to logically organize bags by shared characteristics and then perform bulk actions on
+            those groups. Different grouping rules can be applied based on factors such as bag status,
+            weight, and type.
+          </p>
+          <p>
+            I was assigned to create a Final Destination grouping rule. When a bag is part of the group,
+            the rule checks whether the bag's final destination airport matches a configured list of
+            values. For example, on a transfer route such as YYZ-BOS-JFK, the team may want to track and
+            act on all bags travelling all the way to JFK. A group could therefore be configured for bags
+            with a final destination of JFK. If a bag is loaded into that group without JFK as its final
+            destination, the system generates an exception and, if that exception is overridden, an action
+            item as well.
+          </p>
+        </section>
 
-        <p class="placeholder-note">This page uses a generic work-sample filename for now. Rename it later if you want the URL to match a final project title.</p>
+        <section class="w26-content-card">
+          <h3>Implementation Process</h3>
+          <p>
+            Building the rule involved several user stories and phases of development:
+          </p>
+          <ul class="w26-list">
+            <li>Create the required database configuration for the new rule.</li>
+            <li>Generate the programmatic structure needed to support the rule in the application.</li>
+            <li>Write unit tests to verify the rule logic and expected outcomes.</li>
+            <li>Wire the existing job so it could trigger and evaluate the new rule.</li>
+            <li>Configure the mobile screen behaviour used when the exception is generated.</li>
+            <li>Perform manual testing once I believed the rule had been implemented correctly.</li>
+          </ul>
+        </section>
       </div>
     </div>
     <div id="rectangle right" class="rectangle"></div>
