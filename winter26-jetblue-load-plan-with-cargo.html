@@ -79,6 +79,70 @@
             the legacy generator if any issues were found.
           </p>
         </section>
+
+        <section class="w26-content-card">
+          <h3>Sample Load Plan Message</h3>
+          <p>
+            The sample below shows the kind of ADLFD message structure this work item affected. In this
+            example, the output includes both baggage and cargo data within the same position, which is
+            the key behaviour I was extending in the generator.
+          </p>
+          <pre class="w26-code-block"><code>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+          
+            &lt;AdFlightLoadDataOut
+              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SpecVer="4" RequestID="1738857103510"
+              Product="SmartSuite v16.7.0" DTS="2025-02-06T15:51:43.510639Z"
+              xmlns="https://fpcws.aerodata.aero/Schemas/AdFlightLoadData/4"&gt;
+              &lt;AeroDataCustCode&gt;28&lt;/AeroDataCustCode&gt;
+              &lt;System /&gt;
+              &lt;FlightInfo&gt;
+                  &lt;FlightNum&gt;2876&lt;/FlightNum&gt;
+                  &lt;ApCodeOrigin&gt;MCO&lt;/ApCodeOrigin&gt;
+                  &lt;ApCodeDest&gt;PVD&lt;/ApCodeDest&gt;
+                  &lt;SDD&gt;20250206&lt;/SDD&gt;
+                  &lt;STD&gt;1015&lt;/STD&gt;
+              &lt;/FlightInfo&gt;
+              &lt;AircraftID&gt;618&lt;/AircraftID&gt;
+              &lt;Units&gt;
+                  &lt;Unit Type="Arm"&gt;IN&lt;/Unit&gt;
+                  &lt;Unit Type="Quantity"&gt;G&lt;/Unit&gt;
+                  &lt;Unit Type="Weight"&gt;LB&lt;/Unit&gt;
+              &lt;/Units&gt;
+              &lt;Version&gt;20&lt;/Version&gt;
+              &lt;Event&gt;CloseoutScan&lt;/Event&gt;
+              &lt;CrewInfo /&gt;
+              &lt;PaxInfo /&gt;
+              &lt;CargoInfo&gt;
+                  &lt;PositionData&gt;
+                      &lt;Positions mode="Originating"&gt;
+                          &lt;Position id="1"&gt;
+                              &lt;Items&gt;
+                                  &lt;Item&gt;
+                                      &lt;Bags type="DomBag" transit="Local" subType="Checked"&gt;
+                                          &lt;Count&gt;35&lt;/Count&gt;
+                                      &lt;/Bags&gt;
+                                  &lt;/Item&gt;
+                                  &lt;Item&gt;
+                                      &lt;Bags type="DomBag" transit="Local" subType="F2C"&gt;
+                                          &lt;Count&gt;5&lt;/Count&gt;
+                                      &lt;/Bags&gt;
+                                  &lt;/Item&gt;
+                                  &lt;Item&gt;
+                                      &lt;Cargo type="Comat" transit="Local"&gt;
+                                          &lt;Count&gt;12&lt;/Count&gt;
+                                          &lt;TotalVolume&gt;250&lt;/TotalVolume&gt;
+                                          &lt;TotalWeight&gt;1250&lt;/TotalWeight&gt;
+                                      &lt;/Cargo&gt;
+                                  &lt;/Item&gt;
+                              &lt;/Items&gt;
+                          &lt;/Position&gt;
+                      &lt;/Positions&gt;
+                  &lt;/PositionData&gt;
+              &lt;/CargoInfo&gt;
+          &lt;/AdFlightLoadDataOut&gt;</code></pre>
+        </section>
+
       </div>
     </div>
     <div id="rectangle right" class="rectangle"></div>

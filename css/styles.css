@@ -321,6 +321,18 @@ hr {
     line-height: 1.7;
 }
 
+.w26-code-block {
+    margin: 16px 0 0;
+    padding: 20px;
+    overflow-x: auto;
+    background: #0d2033;
+    color: #eef5fb;
+    border: 1px solid #1f3a54;
+    border-radius: 4px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
 .w26-split {
     display: grid;
     grid-template-columns: minmax(0, 1.6fr) minmax(240px, 340px);
