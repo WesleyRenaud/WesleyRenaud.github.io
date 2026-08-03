@@ -55,9 +55,33 @@
           <p>
             The grouping recovery actions feature for British Airways was also split across several teams.
             My portion consisted of a handful of smaller, mostly unrelated changes spanning the API,
-            mobile client, and web client. One of those pieces was the web client configuration work for
-            the Final Destination rule described in my Winter 2026 report.
+            mobile client, and web client.
           </p>
+        </section>
+
+        <section class="w26-content-card">
+          <h3>What I Owned</h3>
+          <ul class="w26-list">
+            <li>
+              Mobile Already Grouped exception updates so the screen could show incompatibility reasons
+              when a bag was incompatible with its current group.
+            </li>
+            <li>
+              A warning for scanning a bag into a group it already belonged to when that grouping was
+              incompatible.
+            </li>
+            <li>
+              Web client configuration for the Final Destination grouping rule from my Winter 2026 term.
+            </li>
+            <li>
+              A bag-tag scan query fallback that checks bags already in the group when the original
+              operational-window lookup is not enough.
+            </li>
+            <li>
+              Additional smaller API, mobile, and web client changes supporting recovery actions and
+              clearer grouping feedback.
+            </li>
+          </ul>
         </section>
 
         <section class="w26-split">
@@ -104,44 +128,12 @@
         </section>
 
         <section class="w26-content-card">
-          <h3>Other Changes Across Clients</h3>
+          <h3>Other Supporting Changes</h3>
           <p>
-            Beyond the exception and warning screens, I worked on several supporting pieces of the feature:
+            Beyond the exception and warning screens, the bag-tag query fallback and Final Destination web
+            configuration were the other main pieces I owned. Together they improved both the operator
+            recovery experience and the reliability of finding the right bag during grouping scans.
           </p>
-          <ul class="w26-list">
-            <li>
-              Web client configuration for the Final Destination grouping rule from the previous work term.
-            </li>
-            <li>
-              Updates to the query used when a bag tag is scanned. Originally, scanning a bag tag checked
-              for the tag among all bag tags created within an operational window. I added a fallback that
-              also checks all bags already in the group, which improved recovery in cases where the
-              original lookup window was not enough.
-            </li>
-            <li>
-              Additional smaller API, mobile, and web client changes needed to support recovery actions
-              and clearer grouping feedback for operators.
-            </li>
-          </ul>
-        </section>
-
-        <section class="w26-split">
-          <div class="w26-content-card w26-split-main">
-            <h3>Grouping Screen Feedback</h3>
-            <p>
-              On the main Grouping screen, operators also needed clearer feedback when a scanned bag had
-              already been grouped. Showing the previous group and timestamp, along with a remove action,
-              helped keep recovery actions available without forcing the operator out of the current
-              grouping workflow.
-            </p>
-          </div>
-
-          <div class="w26-image-panel w26-split-side">
-            <img class="img-responsive" src="images/grouping-previously-grouped.png" alt="Grouping screen showing previously grouped bag message">
-            <h6 class="caption">
-              Grouping screen feedback when a scanned bag was previously grouped, with a remove action.
-            </h6>
-          </div>
         </section>
       </div>
     </div>
