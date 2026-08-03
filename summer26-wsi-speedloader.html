@@ -115,11 +115,10 @@
           <div class="w26-content-card w26-split-main">
             <h3>Location Selection Flow</h3>
             <p>
-              Rather than building a separate location picker from scratch, I wired the new association
-              screen into the existing area and location selection screens. That kept the user experience
-              consistent with how operators already set workstation and device locations, and it reduced
-              the chance of introducing a second, slightly different selection pattern into the mobile
-              client.
+              The specification called for the association screen to use the existing Select Area and
+              Select Location screens already used for workstation and device settings. My work was to
+              wire that shared flow into the new container location association path so operators selected
+              locations through the same screens they already knew elsewhere in the app.
             </p>
           </div>
 
@@ -135,10 +134,10 @@
           <article class="w26-mini-card">
             <h3>Location Already in Use Warning</h3>
             <p>
-              I also added a warning for cases where the selected location was already associated with
-              another container. The dialog asks whether the user wants to proceed and close the ULD/Cart
-              that currently owns the location, which made the conflict visible before an assignment was
-              finalized.
+              The feature also required a warning when the selected location was already associated with
+              another container. I implemented that dialog so the user could choose whether to proceed and
+              close the ULD/Cart that currently owns the location, making the conflict visible before an
+              assignment was finalized.
             </p>
           </article>
 
