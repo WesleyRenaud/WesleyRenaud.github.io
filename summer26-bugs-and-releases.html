@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+
+<div class="btn-group wrap-buttons" id="work-term-report-buttons">
+  <a href="index.html" class="btn btn-primary work-term-report-button">All Reports</a>
+  <a href="summer24-introduction.html" class="btn btn-primary work-term-report-button">S24 - Armour</a>
+  <a href="fall24-introduction.html" class="btn btn-primary work-term-report-button">F24 - Armour</a>
+  <a href="winter26-introduction.html" class="btn btn-primary work-term-report-button">W26 - Brock</a>
+  <a href="summer26-introduction.html" class="btn btn-primary work-term-report-button is-active">S26 - Brock</a>
+</div>
+
+  <title>Bugs &amp; Releases | Work Term Report</title>
+</head>
+<body>
+  <hr>
+  <div id="title-container">
+    <h1 id="title">Brock Solutions - Work Term Report (S26)</h1>
+    <p id="subtitle">Wesley Renaud&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wrenaud@uoguelph.ca</p>
+  </div>
+  <hr>
+
+  <div class="btn-group wrap-buttons">
+  <a href="summer26-introduction.html" class="btn btn-primary work-term-report-page-button">Introduction</a>
+  <a href="summer26-about-the-employer.html" class="btn btn-primary work-term-report-page-button">About the Employer</a>
+  <a href="summer26-learning-goals.html" class="btn btn-primary work-term-report-page-button">Learning Goals</a>
+  <a href="summer26-achieving-my-goals.html" class="btn btn-primary work-term-report-page-button">Achieving My Goals</a>
+  <a href="summer26-job-description.html" class="btn btn-primary work-term-report-page-button">Job Description</a>
+  <a href="summer26-wsi-speedloader.html" class="btn btn-primary work-term-report-page-button">WSI Speedloader</a>
+  <a href="summer26-grouping-recovery.html" class="btn btn-primary work-term-report-page-button">Grouping Recovery</a>
+  <a href="summer26-bugs-and-releases.html" class="btn btn-primary work-term-report-page-button">Bugs &amp; Releases</a>
+  <a href="summer26-job-skills.html" class="btn btn-primary work-term-report-page-button">Job Skills</a>
+  <a href="summer26-conclusion.html" class="btn btn-primary work-term-report-page-button">Conclusion</a>
+</div>
+
+  <div id="body-container">
+    <div id="rectangle left" class="rectangle"></div>
+    <div id="content-container">
+      <div class="w26-page-shell">
+        <section class="w26-content-card">
+          <p class="w26-kicker">Work Sample</p>
+          <h2>Bugs, Releases, and Production Discipline</h2>
+          <p>
+            Alongside larger features, a substantial part of this work term involved smaller changes and
+            bug work in the context of SmartSuite's release process. SmartSuite has monthly releases, plus
+            occasional hot fixes. Ahead of a release, bugs are tagged as planned for that release, for
+            example <code>Planned24.xx.0</code>. Staying on top of those cycles, and being proactive with
+            time-sensitive high-priority bugs, was one of the biggest challenges of the term.
+          </p>
+        </section>
+
+        <section class="w26-split">
+          <div class="w26-content-card w26-split-main">
+            <h3>Monthly Releases and Planned Bugs</h3>
+            <p>
+              Each release cycle includes a board of bugs planned for that version. Querying by tags such
+              as <code>Planned24.16.0</code> or <code>Planned24.17.0</code> made it possible to see what
+              needed to land before the release, and to prioritize work accordingly. Some bugs were also
+              tagged as regression-related, which helped separate ongoing backlog items from issues found
+              during the release testing window.
+            </p>
+          </div>
+
+          <div class="w26-image-panel w26-split-side">
+            <img class="img-responsive" src="images/bugs-planned-release-query.png" alt="Azure DevOps query filtering bugs by Planned24.16.0 tag">
+            <h6 class="caption">
+              Querying bugs planned for a specific monthly release using the Planned24.16.0 tag.
+            </h6>
+          </div>
+        </section>
+
+        <section class="w26-content-card">
+          <h3>Regression Cycles</h3>
+          <p>
+            Each release also has a regression cycle: a period that typically lasts a few days where
+            developers and QA on the team pause feature work and run regression tests. Those tests are
+            selected based on the features included in the release. The team evaluates which
+            functionality, areas of the app, and modules were touched by the changes and therefore pose a
+            higher risk of regression.
+          </p>
+          <p>
+            Sometimes high-priority regression bugs are identified during that window and must be
+            addressed before release. That creates a short, high-pressure period where communication,
+            prioritization, and careful testing matter as much as the fix itself.
+          </p>
+          <img class="img-responsive" src="images/regression-test-results.png" alt="Regression test results chart showing passed, failed, and not applicable counts">
+          <h6 class="caption">
+            Example regression cycle results, including passed, failed, and not applicable tests.
+          </h6>
+        </section>
+
+        <section class="w26-split">
+          <div class="w26-content-card w26-split-main">
+            <h3>Tracking Open Bugs</h3>
+            <p>
+              Outside the narrow regression window, I also spent time tracking open bugs for the
+              Reconciliation team area, reviewing severity and priority, and identifying which items were
+              already planned for upcoming releases. That habit made it easier to jump between feature
+              work and release support without losing track of what was time-sensitive.
+            </p>
+          </div>
+
+          <div class="w26-image-panel w26-split-side">
+            <img class="img-responsive" src="images/bugs-board-query.png" alt="Azure DevOps bugs query showing planned and regression tags">
+            <h6 class="caption">
+              Open bugs for the Reconciliation area, including planned-release and regression tags.
+            </h6>
+          </div>
+        </section>
+
+        <section class="w26-content-card">
+          <h3>Lessons from a Large Production Codebase</h3>
+          <p>
+            Working in SmartSuite also reinforced several lessons about making changes safely in a large,
+            monolithic, production codebase:
+          </p>
+          <ul class="w26-list">
+            <li>
+              Decide carefully when it is safe to touch an existing piece of functionality versus when it
+              is safer to create a new function. Changing shared code can have broad effects, especially
+              when multiple teams and customers rely on the same paths.
+            </li>
+            <li>
+              Use temporary feature toggles when needed. For the grouping recovery feature, I had to make
+              sure that the smaller changes I landed early were not effectively shipping part of the
+              feature before it was ready. At Brock we work out of the live release / 24.0 branch, so
+              changes have to be evaluated in terms of customer impact. Because some of the grouping work
+              went into a release before the one it was designated for, I needed to keep those changes
+              non-functional until the feature was meant to be enabled.
+            </li>
+            <li>
+              Consider compatibility between newer API versions and older clients. Some customers run older
+              client solutions against newer APIs, so removing fields from DTOs or removing endpoints
+              cannot be done carelessly.
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+    <div id="rectangle right" class="rectangle"></div>
+  </div>
+  <hr>
+</body>
+</html>

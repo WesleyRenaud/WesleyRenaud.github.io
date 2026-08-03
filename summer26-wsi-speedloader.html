@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+
+<div class="btn-group wrap-buttons" id="work-term-report-buttons">
+  <a href="index.html" class="btn btn-primary work-term-report-button">All Reports</a>
+  <a href="summer24-introduction.html" class="btn btn-primary work-term-report-button">S24 - Armour</a>
+  <a href="fall24-introduction.html" class="btn btn-primary work-term-report-button">F24 - Armour</a>
+  <a href="winter26-introduction.html" class="btn btn-primary work-term-report-button">W26 - Brock</a>
+  <a href="summer26-introduction.html" class="btn btn-primary work-term-report-button is-active">S26 - Brock</a>
+</div>
+
+  <title>WSI Speedloader | Work Term Report</title>
+</head>
+<body>
+  <hr>
+  <div id="title-container">
+    <h1 id="title">Brock Solutions - Work Term Report (S26)</h1>
+    <p id="subtitle">Wesley Renaud&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wrenaud@uoguelph.ca</p>
+  </div>
+  <hr>
+
+  <div class="btn-group wrap-buttons">
+  <a href="summer26-introduction.html" class="btn btn-primary work-term-report-page-button">Introduction</a>
+  <a href="summer26-about-the-employer.html" class="btn btn-primary work-term-report-page-button">About the Employer</a>
+  <a href="summer26-learning-goals.html" class="btn btn-primary work-term-report-page-button">Learning Goals</a>
+  <a href="summer26-achieving-my-goals.html" class="btn btn-primary work-term-report-page-button">Achieving My Goals</a>
+  <a href="summer26-job-description.html" class="btn btn-primary work-term-report-page-button">Job Description</a>
+  <a href="summer26-wsi-speedloader.html" class="btn btn-primary work-term-report-page-button">WSI Speedloader</a>
+  <a href="summer26-grouping-recovery.html" class="btn btn-primary work-term-report-page-button">Grouping Recovery</a>
+  <a href="summer26-bugs-and-releases.html" class="btn btn-primary work-term-report-page-button">Bugs &amp; Releases</a>
+  <a href="summer26-job-skills.html" class="btn btn-primary work-term-report-page-button">Job Skills</a>
+  <a href="summer26-conclusion.html" class="btn btn-primary work-term-report-page-button">Conclusion</a>
+</div>
+
+  <div id="body-container">
+    <div id="rectangle left" class="rectangle"></div>
+    <div id="content-container">
+      <div class="w26-page-shell">
+        <section class="w26-content-card">
+          <p class="w26-kicker">Work Sample</p>
+          <h2>WSI Speedloader - Container Location Association</h2>
+          <p>
+            This feature supports how WSI loads bags into containers using a device called a speedloader.
+            WSI wants the ability to scan bags in SmartSuite as they are loaded into a container. To make
+            that workflow possible, BPMs sent when bags pass through the speedloader—which include the
+            location where the speedloader is positioned—need to map to a container. That means the system
+            needs a location that can be associated with a container.
+          </p>
+          <p>
+            The overall feature was split across teams. One team owned the BPM-related work, while my team
+            owned the ability to manually assign locations to containers. Most of my work was on the
+            frontend mobile client: adding the Container Location Association screen, wiring the location
+            selection flow through the existing area/location selection used for workstations and devices,
+            and smaller supporting changes such as adding location fields to related pages.
+          </p>
+        </section>
+
+        <section class="w26-split">
+          <div class="w26-content-card w26-split-main">
+            <h3>Add and Edit ULD/Cart Location Fields</h3>
+            <p>
+              One of the first visible pieces of the feature was adding a Location field to the Add
+              ULD/Cart and Edit ULD/Cart screens. That gave users a place to see and set the location
+              associated with a container as part of the existing create and edit flows, rather than
+              treating location as an isolated concept.
+            </p>
+          </div>
+
+          <div class="w26-image-panel w26-split-side">
+            <img class="img-responsive" src="images/wsi-add-edit-uld-location.png" alt="Add and Edit ULD/Cart screens with Location field">
+            <h6 class="caption">
+              The Add and Edit ULD/Cart screens with the new Location field.
+            </h6>
+          </div>
+        </section>
+
+        <section class="w26-content-card">
+          <h3>Container Location Association Screen</h3>
+          <p>
+            The main mobile work centred on a new ULD/Cart Location screen. From there, users can scan a
+            location barcode or manually select an area and location. The screen makes it clear when a
+            location is still required before the association can be confirmed, and it reuses the existing
+            Select Area / Select Location flow already used elsewhere in the app for workstation and
+            device settings.
+          </p>
+          <div class="image-pair-container">
+            <div class="image-pair-container-left-image">
+              <img class="img-responsive" src="images/wsi-uld-location-required.png" alt="ULD/Cart Location screen showing location required">
+              <h6 class="caption">Location still required before confirm is enabled.</h6>
+            </div>
+            <div class="image-pair-container-right-image">
+              <img class="img-responsive" src="images/wsi-uld-location-selected.png" alt="ULD/Cart Location screen with Bag Room MU08 selected">
+              <h6 class="caption">Area and location selected and ready to confirm.</h6>
+            </div>
+          </div>
+        </section>
+
+        <section class="w26-split">
+          <div class="w26-content-card w26-split-main">
+            <h3>Location Selection Flow</h3>
+            <p>
+              Rather than building a separate location picker from scratch, I wired the new association
+              screen into the existing area and location selection screens. That kept the user experience
+              consistent with how operators already set workstation and device locations, and it reduced
+              the chance of introducing a second, slightly different selection pattern into the mobile
+              client.
+            </p>
+          </div>
+
+          <div class="w26-image-panel w26-split-side">
+            <img class="img-responsive" src="images/wsi-select-area-location.png" alt="Select Area and Select Location screens">
+            <h6 class="caption">
+              The existing Select Area and Select Location screens reused for container location assignment.
+            </h6>
+          </div>
+        </section>
+
+        <section class="w26-card-grid">
+          <article class="w26-mini-card">
+            <h3>Location Already in Use Warning</h3>
+            <p>
+              I also added a warning for cases where the selected location was already associated with
+              another container. The dialog asks whether the user wants to proceed and close the ULD/Cart
+              that currently owns the location, which made the conflict visible before an assignment was
+              finalized.
+            </p>
+          </article>
+
+          <article class="w26-mini-card">
+            <h3>API Calls and Mutation Flows</h3>
+            <p>
+              Beyond the UI, I created API calls for assigning a location and for closing a container as
+              part of the location-in-use warning flow. That meant carefully reviewing existing container
+              mutation workflows, deciding which data each call needed, and determining whether existing
+              endpoints could be reused or whether new ones were required.
+            </p>
+          </article>
+
+          <article class="w26-mini-card">
+            <h3>Snackbar Feedback</h3>
+            <p>
+              Smaller supporting work included snackbar messages so users received clear confirmation when
+              a location was successfully set. That feedback helped make the association flow feel complete
+              within the broader Load Flight workflow.
+            </p>
+          </article>
+        </section>
+
+        <section class="w26-split">
+          <div class="w26-content-card w26-split-main">
+            <h3>Warning and Success Feedback</h3>
+            <p>
+              Together, the Location Already in Use warning and the success snackbar covered both sides of
+              the association experience: alerting users when a location conflict needed a decision, and
+              confirming when an assignment completed successfully.
+            </p>
+          </div>
+
+          <div class="w26-image-panel w26-split-side">
+            <img class="img-responsive" src="images/wsi-location-already-in-use.png" alt="Location already in use warning dialog">
+            <h6 class="caption">
+              Warning shown when another ULD/Cart is already using the selected location.
+            </h6>
+          </div>
+        </section>
+
+        <section class="w26-content-card">
+          <img class="img-responsive" src="images/wsi-location-success-snackbar.png" alt="Load Flight screen with location success snackbar">
+          <h6 class="caption">
+            Success snackbar confirming that the ULD/Cart location was set to Bag Room MU08.
+          </h6>
+        </section>
+      </div>
+    </div>
+    <div id="rectangle right" class="rectangle"></div>
+  </div>
+  <hr>
+</body>
+</html>

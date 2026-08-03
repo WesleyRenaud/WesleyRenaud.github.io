@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+
+<div class="btn-group wrap-buttons" id="work-term-report-buttons">
+  <a href="index.html" class="btn btn-primary work-term-report-button">All Reports</a>
+  <a href="summer24-introduction.html" class="btn btn-primary work-term-report-button">S24 - Armour</a>
+  <a href="fall24-introduction.html" class="btn btn-primary work-term-report-button">F24 - Armour</a>
+  <a href="winter26-introduction.html" class="btn btn-primary work-term-report-button">W26 - Brock</a>
+  <a href="summer26-introduction.html" class="btn btn-primary work-term-report-button is-active">S26 - Brock</a>
+</div>
+
+  <title>Grouping Recovery | Work Term Report</title>
+</head>
+<body>
+  <hr>
+  <div id="title-container">
+    <h1 id="title">Brock Solutions - Work Term Report (S26)</h1>
+    <p id="subtitle">Wesley Renaud&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wrenaud@uoguelph.ca</p>
+  </div>
+  <hr>
+
+  <div class="btn-group wrap-buttons">
+  <a href="summer26-introduction.html" class="btn btn-primary work-term-report-page-button">Introduction</a>
+  <a href="summer26-about-the-employer.html" class="btn btn-primary work-term-report-page-button">About the Employer</a>
+  <a href="summer26-learning-goals.html" class="btn btn-primary work-term-report-page-button">Learning Goals</a>
+  <a href="summer26-achieving-my-goals.html" class="btn btn-primary work-term-report-page-button">Achieving My Goals</a>
+  <a href="summer26-job-description.html" class="btn btn-primary work-term-report-page-button">Job Description</a>
+  <a href="summer26-wsi-speedloader.html" class="btn btn-primary work-term-report-page-button">WSI Speedloader</a>
+  <a href="summer26-grouping-recovery.html" class="btn btn-primary work-term-report-page-button">Grouping Recovery</a>
+  <a href="summer26-bugs-and-releases.html" class="btn btn-primary work-term-report-page-button">Bugs &amp; Releases</a>
+  <a href="summer26-job-skills.html" class="btn btn-primary work-term-report-page-button">Job Skills</a>
+  <a href="summer26-conclusion.html" class="btn btn-primary work-term-report-page-button">Conclusion</a>
+</div>
+
+  <div id="body-container">
+    <div id="rectangle left" class="rectangle"></div>
+    <div id="content-container">
+      <div class="w26-page-shell">
+        <section class="w26-content-card">
+          <p class="w26-kicker">Work Sample</p>
+          <h2>British Airways - Grouping Recovery Actions</h2>
+          <p>
+            Grouping in SmartSuite lets users create groups of bags that satisfy shared rules. For
+            example, a group can be limited to active bags, bags terminating at a specific airport through
+            the Final Destination rule, dry ice bags, or other rule combinations. Operators can then work
+            with those groups as a unit rather than handling every bag individually.
+          </p>
+          <p>
+            The grouping recovery actions feature for British Airways was also split across several teams.
+            My portion consisted of a handful of smaller, mostly unrelated changes spanning the API,
+            mobile client, and web client. One of those pieces was the web client configuration work for
+            the Final Destination rule described in my Winter 2026 report.
+          </p>
+        </section>
+
+        <section class="w26-split">
+          <div class="w26-content-card w26-split-main">
+            <h3>Already Grouped Exception Updates</h3>
+            <p>
+              One of the more visible mobile changes was updating the Already Grouped exception shown when
+              a bag is scanned into a group while it already belongs to another group. I extended that
+              exception so it could include incompatibility reasons when the bag is incompatible with the
+              group it is currently in, rather than only with the group it is being scanned into.
+            </p>
+            <p>
+              That change made the recovery decision clearer for operators. Instead of only seeing that a
+              bag was already grouped, they could also see why the current grouping was not a good fit and
+              choose whether to remove or move the bag.
+            </p>
+          </div>
+
+          <div class="w26-image-panel w26-split-side">
+            <img class="img-responsive" src="images/grouping-already-grouped-exception.png" alt="Already Grouped exception before and after incompatibility details">
+            <h6 class="caption">
+              Already Grouped exception updated to include incompatibility details such as departure time.
+            </h6>
+          </div>
+        </section>
+
+        <section class="w26-split">
+          <div class="w26-content-card w26-split-main">
+            <h3>Already Grouped Warning</h3>
+            <p>
+              I also added a warning for scanning a bag into a group that it is already in when the bag is
+              incompatible with that group. This covered a different recovery path from the cross-group
+              Already Grouped exception: the bag does not need to be moved between groups, but the operator
+              still needs a clear signal that the current grouping is invalid and a way to remove it.
+            </p>
+          </div>
+
+          <div class="w26-image-panel w26-split-side">
+            <img class="img-responsive" src="images/grouping-already-grouped-warning.png" alt="Grouping warning for incompatible already grouped bag">
+            <h6 class="caption">
+              Warning shown when a bag is already in the scanned group but is not compatible with it.
+            </h6>
+          </div>
+        </section>
+
+        <section class="w26-content-card">
+          <h3>Other Changes Across Clients</h3>
+          <p>
+            Beyond the exception and warning screens, I worked on several supporting pieces of the feature:
+          </p>
+          <ul class="w26-list">
+            <li>
+              Web client configuration for the Final Destination grouping rule from the previous work term.
+            </li>
+            <li>
+              Updates to the query used when a bag tag is scanned. Originally, scanning a bag tag checked
+              for the tag among all bag tags created within an operational window. I added a fallback that
+              also checks all bags already in the group, which improved recovery in cases where the
+              original lookup window was not enough.
+            </li>
+            <li>
+              Additional smaller API, mobile, and web client changes needed to support recovery actions
+              and clearer grouping feedback for operators.
+            </li>
+          </ul>
+        </section>
+
+        <section class="w26-split">
+          <div class="w26-content-card w26-split-main">
+            <h3>Grouping Screen Feedback</h3>
+            <p>
+              On the main Grouping screen, operators also needed clearer feedback when a scanned bag had
+              already been grouped. Showing the previous group and timestamp, along with a remove action,
+              helped keep recovery actions available without forcing the operator out of the current
+              grouping workflow.
+            </p>
+          </div>
+
+          <div class="w26-image-panel w26-split-side">
+            <img class="img-responsive" src="images/grouping-previously-grouped.png" alt="Grouping screen showing previously grouped bag message">
+            <h6 class="caption">
+              Grouping screen feedback when a scanned bag was previously grouped, with a remove action.
+            </h6>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div id="rectangle right" class="rectangle"></div>
+  </div>
+  <hr>
+</body>
+</html>
