@@ -125,11 +125,23 @@
         </section>
 
         <section class="w26-content-card">
-          <h3>Other Supporting Changes</h3>
+          <h3>Bag-Tag Scan Query Fallback</h3>
           <p>
-            Beyond the exception and warning screens, the bag-tag query fallback and Final Destination web
-            configuration were the other main pieces I owned. Together they improved both the operator
-            recovery experience and the reliability of finding the right bag during grouping scans.
+            Another change I owned was an update to the query used when a bag tag is scanned into a group.
+            Originally, scanning a bag tag checked for that tag among all bag tags created within an
+            operational window. I added a fallback that also checks the bags already in the group when
+            the original lookup does not find a match. That made recovery more reliable in cases where the
+            bag existed in the group context but fell outside the window used by the first query.
+          </p>
+        </section>
+
+        <section class="w26-content-card">
+          <h3>Final Destination Web Configuration</h3>
+          <p>
+            I also completed web client configuration work for the Final Destination grouping rule from my
+            Winter 2026 term. That rule lets a group restrict bags based on final destination airport, and
+            the web configuration side was part of making the rule usable beyond the earlier API and mobile
+            work.
           </p>
         </section>
       </div>
